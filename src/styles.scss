@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css'; // html, body { height: 100%; }
+//   body {
+//   margin: 0;
+//   font-family: Roboto, 'Helvetica Neue', sans-serif;
+// }
+@import url(//db.onlinewebfonts.com/c/582a4f01aaf0a1dc9fc7f0c5288482a3?family=Pokemon+Hollow);
+
+@font-face {
+  font-family: 'Pokemon Hollow';
+  src: url('//db.onlinewebfonts.com/t/582a4f01aaf0a1dc9fc7f0c5288482a3.eot');
+  src: url('//db.onlinewebfonts.com/t/582a4f01aaf0a1dc9fc7f0c5288482a3.eot?#iefix')
+      format('embedded-opentype'),
+    url('//db.onlinewebfonts.com/t/582a4f01aaf0a1dc9fc7f0c5288482a3.woff2')
+      format('woff2'),
+    url('//db.onlinewebfonts.com/t/582a4f01aaf0a1dc9fc7f0c5288482a3.woff')
+      format('woff'),
+    url('//db.onlinewebfonts.com/t/582a4f01aaf0a1dc9fc7f0c5288482a3.ttf')
+      format('truetype'),
+    url('//db.onlinewebfonts.com/t/582a4f01aaf0a1dc9fc7f0c5288482a3.svg#Pokemon Hollow')
+      format('svg');
+}

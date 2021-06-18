@@ -1,0 +1,29 @@
+<h1>Attribute Directive</h1>
+
+<h4>Chọn màu highlight</h4>
+<div class="pb-2">
+  <input type="radio" name="colors" (click)="color = 'lightgreen'" />Green
+  <input type="radio" name="colors" (click)="color = 'yellow'" />Yellow
+  <input type="radio" name="colors" (click)="color = 'cyan'" />Cyan
+</div>
+<p [appHighlight]="color">Highlight me!</p>
+
+<p [appHighlight]="color" defaultColor="violet">Highlight me too!</p>
+
+<hr />
+<p><i>Di chuột qua các dòng sau để xem các điểm nổi bật cố định </i></p>
+
+<p [appHighlight]="'yellow'">Highlighted in yellow</p>
+<p appHighlight="orange">Highlighted in orange</p>
+
+<hr />
+
+<p>
+  Xem thêm:
+  <span
+    ><a
+      href="https://github.com/phuocnguyen210495/100-days-of-angular/blob/master/Day015-introduction-dependency-injection-in-angular.md"
+      >https://github.com/phuocnguyen210495/100-days-of-angular/blob/master/Day015-introduction-dependency-injection-in-angular.md</a
+    ></span
+  >
+</p>

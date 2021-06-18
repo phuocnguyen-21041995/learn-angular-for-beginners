@@ -1,0 +1,62 @@
+{{ render() }}
+<div class="paginator pt-2">
+  <button
+    mat-raised-button
+    [disabled]="currentPage === 1"
+    (click)="changePageToFirst($event)"
+    class="paginator-first"
+  >
+    <span> << </span>
+  </button>
+  <button
+    mat-raised-button
+    [disabled]="currentPage === 1"
+    (click)="changePageToPrev($event)"
+    class="paginator-prev"
+    style="margin-right: 10px"
+  >
+    <span> < </span>
+  </button>
+  <span class="paginator-pages">
+    <button
+      mat-raised-button
+      *ngFor="let pageLink of pageLinks"
+      class="paginator-page"
+      [class.highlight]="pageLink == currentPage"
+      (click)="onPageLinkClick($event, pageLink)"
+      style="margin-right: 10px; margin-bottom: 10px"
+    >
+      {{ pageLink }}
+    </button>
+  </span>
+  <button
+    mat-raised-button
+    [disabled]="currentPage === lastPage"
+    (click)="changePageToNext($event)"
+    class="paginator-next"
+  >
+    <span> > </span>
+  </button>
+  <button
+    mat-raised-button
+    [disabled]="currentPage === lastPage"
+    (click)="changePageToLast($event)"
+    class="paginator-last"
+  >
+    <span> >> </span>
+  </button>
+  <div class="row p-0 d-flex justify-content-start">
+    <div class="col-1">
+      <nz-select
+        [(ngModel)]="rows"
+        class="paginator-rows-per-page"
+        (ngModelChange)="onRppChange()"
+        ><nz-option
+          *ngFor="let item of rowsPerPageOptions"
+          [nzValue]="item"
+          [nzLabel]="item"
+        ></nz-option
+      ></nz-select>
+    </div>
+  </div>
+</div>

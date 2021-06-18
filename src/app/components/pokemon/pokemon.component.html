@@ -1,0 +1,57 @@
+<!-- {{ vm$ | json }} -->
+<div *ngIf="vm$">
+  <div *rxLet="vm$; let vm">
+    <input
+      nz-input
+      class="query"
+      type="text"
+      placeholder="Filter on the current page..."
+      [formControl]="query"
+    />
+    <!-- {{ vm.total }}
+    {{ vm.currentPage }}
+    {{ vm.limit }} -->
+    <nz-table
+      #virtualTable
+      [nzBordered]="true"
+      [nzVirtualItemSize]="54"
+      nzShowSizeChanger
+      [nzData]="vm.filteredResult"
+      [nzLoading]="vm.status === 'loading'"
+      [nzFrontPagination]="true"
+      [nzShowPagination]="false"
+      [nzPageSizeOptions]="[10, 20, 30, 40]"
+      [nzTotal]="vm.total"
+      [nzPageIndex]="vm.currentPage"
+      [nzPageSize]="vm.limit"
+      (nzQueryParams)="onPageChanged(vm.limit, $event)"
+    >
+      <thead>
+        <tr>
+          <th nzColumnKey="name">Name</th>
+          <th nzColumnKey="email">Detail URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of vm.filteredResult">
+          <td>{{ result.name }}</td>
+          <td>
+            <a
+              nz-button
+              nzType="link"
+              (click)="onQueryParamsChange(result.url)"
+              >{{ result.url }}</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+    <app-paginator
+      [currentPage]="vm.currentPage"
+      [rowsPerPageOptions]="[10, 20, 40, 80]"
+      [rows]="vm.limit"
+      [totalRecords]="vm.total"
+      (onPageChange)="onPageChanged(vm.limit, $event)"
+    ></app-paginator>
+  </div>
+</div>
