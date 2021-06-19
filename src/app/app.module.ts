@@ -34,6 +34,12 @@ import { RouterReviewRoutes } from './components/vnr-kpi/router-review/router-re
 import { ArticleService } from './components/vnr-kpi/router-review/article.service';
 import { TemplateDrivenFormsComponent } from './components/vnr-kpi/template-driven-forms/template-driven-forms.component';
 import { PokemonModule } from './components/pokemon/pokemon.module';
+import { AnimationComponent } from './components/vnr-kpi/animation/animation.component';
+import { BasicComponent } from './components/vnr-kpi/animation/basic/basic.component';
+import { StateChangeDemoModule } from './components/vnr-kpi/animation/basic/state-change/state-change.demo.module';
+import { EnterExitDemoModule } from './components/vnr-kpi/animation/basic/enter-exit/enter-exit.demo.module';
+// import { ContainersModule } from './components/vnr-kpi/animation/containers';
+// import { NavigationsModule } from './components/vnr-kpi/animation/shared/components/navigations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +59,8 @@ import { PokemonModule } from './components/pokemon/pokemon.module';
     ArticleDetailComponent,
     ArticleListComponent,
     TemplateDrivenFormsComponent,
+    AnimationComponent,
+    BasicComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +79,10 @@ import { PokemonModule } from './components/pokemon/pokemon.module';
     FormsModule,
     RouterReviewRoutes,
     PokemonModule,
+    StateChangeDemoModule,
+    EnterExitDemoModule,
+    // ContainersModule,
+    // NavigationsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }, ArticleService],
   bootstrap: [AppComponent],

@@ -5,6 +5,8 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 import { AccessibilityComponent } from './components/vnr-kpi/accessibility/accessibility.component';
+import { AnimationComponent } from './components/vnr-kpi/animation/animation.component';
+import { BasicComponent } from './components/vnr-kpi/animation/basic/basic.component';
 import { AttributeDirectiveComponent } from './components/vnr-kpi/attribute-directive/attribute-directive.component';
 import { ArticleDetailComponent } from './components/vnr-kpi/router-review/article-detail/article-detail.component';
 import { ArticleListComponent } from './components/vnr-kpi/router-review/article-list/article-list.component';
@@ -26,6 +28,9 @@ const routes: Routes = [
   { path: 'attribute-directive', component: AttributeDirectiveComponent },
   { path: 'security', component: SecurityComponent },
   { path: 'accessibility', component: AccessibilityComponent },
+  { path: 'animation', component: AnimationComponent },
+  { path: 'basic', component: BasicComponent },
+
   {
     path: 'router-review',
     component: RouterReviewComponent,

@@ -1,0 +1,10 @@
+<!-- <app-button-basic
+  [text]="cardIsDisplayed ? 'hide' : 'show'"
+  (click)="toggleCard()"
+></app-button-basic> -->
+<button class="mb-3" nz-button nzType="primary" (click)="toggleCard()">
+  show/hide
+</button>
+<div *ngIf="cardIsDisplayed" @fadeSlideInOut>
+  <app-card-demo-sample></app-card-demo-sample>
+</div>

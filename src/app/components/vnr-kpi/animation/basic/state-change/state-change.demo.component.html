@@ -1,0 +1,8 @@
+<div>
+  <button class="mb-3" nz-button nzType="primary" (click)="toggleIsEnabled()">
+    Primary Button
+  </button>
+  <div class="card" [@enabledStateChange]="isEnabled ? 'enabled' : 'disabled'">
+    <app-card-demo-sample [hoverEnabled]="isEnabled"></app-card-demo-sample>
+  </div>
+</div>
